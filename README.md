@@ -8,30 +8,15 @@ Interface হলো একটি blueprint বা নকশা যা বলে 
 
 Compile-time safety দেয়, অর্থাৎ ভুল property বা type ব্যবহার করলে কোড চলার আগেই error দেখায়।
 
-### উদ্দেশ্য এবং ব্যবহার:
-Object বা Class-এর structure enforce করা।
-
-Class implement করার জন্য।
-
-বড় প্রজেক্টে consistency বজায় রাখা।
-
 ### সুবিধা:
-
-Compile-time safety → ভুল property বা type ব্যবহারে error।
-
-Class design clean ও structured।
-
-
-
-
-
+    1. Class implement করার জন্য।
+    2. Compile-time safety → ভুল property বা type ব্যবহারে error।
+    3. more
 
 ### Interface যা করতে পারে না:
     1. Union type তৈরি করতে পারে না
     2. Tuple type তৈরি করতে পারে না
     3. more
-
-
 
 
 ## Usage/Examples
@@ -61,7 +46,7 @@ class Dog implements Animal {
 ```
 
 
-### Type:
+### Type Alias:
 
 Type হলো flexible type system, যা Object ছাড়াও primitive, union, tuple, function type define করতে পারে।
 
