@@ -142,3 +142,64 @@ type UserKeys = keyof User;
 - more
  
 
+
+
+
+
+## any types
+
+any হলো সবচেয়ে flexible টাইপ। এর মানে এই যে, এই টাইপের ভেরিয়েবলে যেকোনো ধরনের মান রাখা যায়। any ব্যবহার করলে TypeScript টাইপ চেকিং বন্ধ করে দেয়।
+
+
+
+
+
+### Examples
+
+```typescript
+let data: any;
+data = 5;
+data = "Hello";
+data = { name: "Sujon" };
+
+```
+
+
+## unknown types
+
+unknown any এর মতোই, এটি যেকোনো ধরনের মান রাখতে পারে, কিন্তু এর উপর operation করার আগে টাইপ চেক বাধ্যতামূলক।
+
+### মূল বিষয়গুলো
+- any থেকে নিরাপদ।
+- ব্যবহারের আগে টাইপ চেক বাধ্যতামূলক।
+
+### Examples
+
+```typescript
+let value: unknown;
+
+value = 10;
+value = "Hello";
+
+let str: string;
+
+// str = value; // Error: unknown টাইপের মান সরাসরি string এ assign করা যাবে না
+
+if (typeof value === "string") {
+  str = value; // টাইপ নিরাপদভাবে assign করা হলো
+}
+
+```
+### never types
+
+never হলো এমন একটি টাইপ যা কখনো মান ধরে না। সাধারণত function এর জন্য ব্যবহার করা হয় যা কখনো return করে না
+
+
+### Examples
+
+```typescript
+function throwError(message: string): never {
+  throw new Error(message);
+}
+
+```
