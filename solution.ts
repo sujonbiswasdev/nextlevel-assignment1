@@ -8,7 +8,7 @@ function formatValue(arg:formatType):formatType{
     }else if(typeof arg ==='boolean'){
         return !arg;
     }else{
-        return `Please enter valid text`
+        return `Please enter valid text`;
     }
 }
 
@@ -18,10 +18,10 @@ console.log(formatValue(true));
 
 
 
-type Tlength = string | any[]
+type Tlength = string | any[];
 function getLength(arg:Tlength):number {
     if(typeof arg==='string'){
-        return arg.length
+        return arg.length;
     }else if(Array.isArray(arg)){
         return arg.length
     }
