@@ -34,6 +34,7 @@ console.log(getLength([10, 20, 30, 40]));
 
 
 
+
 class Person{
     name:string;
     age:number;
@@ -80,6 +81,8 @@ function filterByRating(arr:TBook):TBook{
 }
 
 console.log(filterByRating(books));
+
+
 
 type TActiveUser = Array<
 {
@@ -162,6 +165,8 @@ function getUniqueValues(arr1:number[],arr2:number[]):(number|string)[]{
     return arr
 }
 console.log(getUniqueValues(array1, array2));
+
+
 
 
 
