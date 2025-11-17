@@ -123,7 +123,7 @@ keyof হলো TypeScript-এর type operator। এটি object type-এর 
 
 ### Examples
 
-```javascript
+```typescript
 interface User {
   name: string;
   age: number;
@@ -203,3 +203,75 @@ function throwError(message: string): never {
 }
 
 ```
+
+
+## TypeScript Enums
+
+
+enum হলো TypeScript-এর একটি special type, যা নির্দিষ্ট নামকৃত মানগুলো (named constants) সংরক্ষণ করে। সহজভাবে বলতে গেলে, একই ধরনের মানগুলোকে একটি গ্রুপে রাখার উপায়।
+
+
+## Examples
+
+```typescript
+enum Season {
+  Spring,
+  Summer,
+  Autumn,
+  Winter
+}
+
+let currentSeason: Season = Season.Summer;
+console.log(currentSeason); // Output: 1
+
+```
+
+
+### Union Type (|)
+
+Union type মানে হলো একাধিক টাইপের মধ্যে যেকোনো একটি ব্যবহার করা যাবে। সিম্বল: |
+
+
+
+## Examples
+
+```typescript
+function printId(id: string | number) {
+  console.log("ID:", id);
+}
+
+printId(123);       // Output: ID: 123
+printId("abc123");  // Output: ID: abc123
+
+
+```
+
+
+
+
+## Intersection Type (&)
+Intersection type মানে হলো দুই বা তার বেশি টাইপ একসাথে combine করা, সব property থাকতে হবে।
+
+## Examples
+
+```typescript
+type Person = {
+  name: string;
+};
+
+type Employee = {
+  employeeId: number;
+};
+
+type Staff = Person & Employee;
+
+let staffMember: Staff = {
+  name: "Sujon",
+  employeeId: 101
+};
+
+
+
+```
+
+
