@@ -15,7 +15,7 @@ Class implement করার জন্য।
 
 বড় প্রজেক্টে consistency বজায় রাখা।
 
-### লাভ:
+### সুবিধা:
 
 Compile-time safety → ভুল property বা type ব্যবহারে error।
 
@@ -68,7 +68,7 @@ Type হলো flexible type system, যা Object ছাড়াও primitive, un
 
 
 
-### লাভ:
+### সুবিধা:
     1. Object ছাড়াও অন্য type define করা যায়।
     2. Complex type তৈরি করা সহজ।
     3. more
