@@ -21,10 +21,9 @@ Compile-time safety → ভুল property বা type ব্যবহারে 
 
 Class design clean ও structured।
 
-Declaration merging → একই নামের interface multiple declare করলে merge হয়।
 
 
- 
+
 
 
 ### Interface যা করতে পারে না:
