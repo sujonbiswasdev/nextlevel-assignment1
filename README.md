@@ -111,7 +111,7 @@ let users: User[] = [{ id: 1, name: "Sujon", isActive: true }];
 
 
 
-
+### What is the use of the keyof keyword in TypeScript? Provide an example.
 
 
 ## keyof
@@ -144,7 +144,7 @@ type UserKeys = keyof User;
 
 
 
-
+### Explain the difference between any, unknown, and never types in TypeScript.
 
 ## any types
 
@@ -204,6 +204,7 @@ function throwError(message: string): never {
 
 ```
 
+### What is the use of enums in TypeScript? Provide an example of a numeric and string enum.
 
 ## TypeScript Enums
 
@@ -214,18 +215,33 @@ enum হলো TypeScript-এর একটি special type, যা নির্�
 ## Examples
 
 ```typescript
-enum Season {
-  Spring,
-  Summer,
-  Autumn,
-  Winter
+
+// numeric enums
+enum Status {
+  Pending,     // 0
+  InProgress,  // 1
+  Completed    // 2
 }
 
-let currentSeason: Season = Season.Summer;
-console.log(currentSeason); // Output: 1
+let taskStatus: Status = Status.InProgress;
+console.log(taskStatus); // 1
+
+// string enums
+
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT"
+}
+
+let move: Direction = Direction.Left;
+console.log(move); // "LEFT"
+
 
 ```
 
+### Provide an example of using union and intersection types in TypeScript.
 
 ### Union Type (|)
 
