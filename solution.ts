@@ -1,12 +1,14 @@
 
 type formatType = string | number | boolean
-function formatValue(arg:formatType):string | number | boolean | undefined{
+function formatValue(arg:formatType):formatType{
     if(typeof arg ==='string'){
-        return arg.toUpperCase()
+        return arg.toUpperCase();
     }else if(typeof arg==='number'){
-        return arg*10
-    }else if(typeof arg==='boolean'){
-        return !arg
+        return arg*10;
+    }else if(typeof arg ==='boolean'){
+        return !arg;
+    }else{
+        return `Please enter valid text`
     }
 }
 
@@ -16,19 +18,15 @@ console.log(formatValue(true));
 
 
 
-type Tlength = string | number[] | string[] 
-function getLength(arg:Tlength):number | undefined{
+type Tlength = string | any[]
+function getLength(arg:Tlength):number {
     if(typeof arg==='string'){
         return arg.length
     }else if(Array.isArray(arg)){
-        let elementnum = 0
-        for(let i=0;i<arg.length;i++){
-            elementnum=elementnum+1
-        }
-        return elementnum
+        return arg.length
     }
+    return 0
 }
-
 console.log(getLength('typescript'));
 console.log(getLength([10, 20, 30, 40]));
 
@@ -45,7 +43,7 @@ class Person{
     }
 
     getDetails(){
-        return `Name: ${this.name}, Age: ${this.age}`;
+        return `'Name: ${this.name}, Age: ${this.age}'`;
     }
     
 }
@@ -81,6 +79,7 @@ function filterByRating(arr:TBook):TBook{
 }
 
 console.log(filterByRating(books));
+
 
 
 
@@ -135,8 +134,8 @@ type getUniqueType = number[] | string[]
 const array1:number[] | string[] = [1, 2, 3, 4, 5];
 const array2:number[] | string[] = [3, 4, 5, 6, 7];
 
-function getUniqueValues(arr1:number[],arr2:number[]):(number|string)[]{
-    let arr:number[] | string=[];
+function getUniqueValues(arr1:getUniqueType,arr2:getUniqueType):getUniqueType{
+    let arr:any[]=[];
     for(let i= 0;i<arr1.length;i++){
         let found = false
         for(let j=0;j<arr.length;j++){
