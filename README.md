@@ -34,7 +34,7 @@
 
 interface Person {
   name: string;
-  age: number;
+  age?: number;
 }
 
 // ভুল - Interface itself মান assign করতে পারবে না
@@ -42,7 +42,7 @@ interface Person {
 
 
 // ঠিক উপায়: Interface type দিয়ে object declare করতে হয়
-let sujon: Person = { name: "Sujon", age: 25 };
+let sujon: Person = { name: "Sujon" };
 console.log(sujon.name); // Output: Sujon
 
 
@@ -146,6 +146,75 @@ console.log(greet("Sujon")); // Output: Hello, Sujon!
 
 
 ```
+
+
+### What is the use of the keyof keyword in TypeScript? Provide an example.
+
+### কি-অফ (keyof)
+
+টাইপস্ক্রিপ্ট কি-অফ (keyof) হলো একটি টাইপ অপারেটর, যেটি কোনো অবজেক্ট বা ইন্টারফেসের সকল প্রপার্টির নামকে ইউনিয়ন টাইপ হিসেবে বের করে আনে।
+
+এবং সেগুলো আমরা টাইপ হিসেবে ব্যবহার করতে পারি। কোডকে আরও শক্তিশালী এবং টাইপ-সেফ করা যায়।
+
+### এটি ব্যবহার করা হয়:
+
+- টাইপের সাথে টাইপ-সেইফ কোড লিখতে।
+- ম্যাপিড টাইপ তৈরি করতে ব্যবহার করা হয়।
+- ডায়নামিকভাবে প্রপার্টিতে অ্যাক্সেস করতে।
+- ইত্যাদি
+
+## উদাহরণ
+
+```typescript
+ 
+
+interface Person {
+    name: string;
+    gender: string;
+}
+
+type ReadonlyPerson = {
+    readonly [K in keyof Person]: Person[K];
+}
+
+const person: ReadonlyPerson = {
+    name: "sujon",
+    gender: "male",
+};
+
+console.log(person.name); // "sujon"
+console.log(person.gender); // "male"
+
+
+
+type User = {
+  id: number;
+  name: string;
+  address: {
+    city: string;
+  };
+};
+
+const user: User = {
+  id: 222, // key: value
+  name: "sujon",
+  address: {
+    city: "sylhet",
+  },
+};
+
+
+const getPropertyFromObj = <X>(obj: X, key: keyof X) => {
+  return obj[key];
+};
+
+const result1 = getPropertyFromObj(user, "id");
+console.log(result1);
+
+
+
+```
+
 
 
 
