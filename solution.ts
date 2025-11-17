@@ -56,11 +56,6 @@ console.log(person2.getDetails());
 
 
 
-
-
-
-
-
 type TBook=Array<
 {
     title:string;
