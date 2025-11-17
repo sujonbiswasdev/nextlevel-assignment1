@@ -108,3 +108,37 @@ let users: User[] = [{ id: 1, name: "Sujon", isActive: true }];
 
 
 ```
+
+
+
+
+
+
+## keyof
+
+keyof হলো TypeScript-এর type operator। এটি object type-এর সব property name বের করে। Output হয় union type, অর্থাৎ সব property name একসাথে।
+
+
+
+
+### Examples
+
+```javascript
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type UserKeys = keyof User;
+// Result: "name" | "age" | "email"
+
+```
+
+
+### কেন ব্যবহার করা হয়?
+- Object-এর কোন property valid কিনা compile-time check করতে।
+- Type-safe কোড লেখা।
+- more
+ 
+
