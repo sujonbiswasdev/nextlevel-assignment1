@@ -15,6 +15,7 @@ function formatValue(arg:formatType):formatType{
 
 
 
+
 type Tlength = string | any[];
 function getLength(arg:Tlength):number {
     if(typeof arg==='string'){
@@ -66,6 +67,7 @@ function filterByRating(arr:TBook):TBook{
 
 
 
+
 type TActiveUser = Array<
 {
     id:number;
@@ -81,6 +83,7 @@ const filterActiveUsers=(user:TActiveUser):TActiveUser=>{
     const isActive = user.filter((item)=>item.isActive ==true);
     return isActive
 }
+
 
 
 
@@ -115,7 +118,7 @@ function getUniqueValues(arr1:getUniqueType,arr2:getUniqueType):getUniqueType{
             }
         }
     if(!found){
-        arr.push(arr1[i])
+        arr[i]=(arr1[i])
     }
     }
 
@@ -128,12 +131,11 @@ function getUniqueValues(arr1:getUniqueType,arr2:getUniqueType):getUniqueType{
             }
         }
         if(!found){
-            arr.push(arr2[i])
+            arr[arr.length]=(arr2[i])
         }
     }
     return arr
 }
-
 
 
 
