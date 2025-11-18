@@ -118,7 +118,7 @@ function getUniqueValues(arr1:getUniqueType,arr2:getUniqueType):getUniqueType{
             }
         }
     if(!found){
-        arr[i]=(arr1[i])
+        arr[arr.length]=arr1[i]
     }
     }
 
@@ -131,7 +131,7 @@ function getUniqueValues(arr1:getUniqueType,arr2:getUniqueType):getUniqueType{
             }
         }
         if(!found){
-            arr[arr.length]=(arr2[i])
+            arr[arr.length]=arr2[i]
         }
     }
     return arr
